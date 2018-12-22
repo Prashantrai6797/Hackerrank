@@ -21,10 +21,16 @@
 
 
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-X = int(raw_input())
-Y = int(raw_input())
-Z = int(raw_input())
-N = int(raw_input())
-
-ans = [[i, j, k] for i in range(X + 1) for j in range(Y + 1) for k in range(Z + 1) if i + j + k != N]
-print ans
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    ans=[]
+    for i in range(x+1):
+        for j in range(y+1):
+            for k in range(z+1):
+                if(i+j+k)!= n:
+                    r=[i,j,k]
+                    ans.append(r)
+    print(ans)
