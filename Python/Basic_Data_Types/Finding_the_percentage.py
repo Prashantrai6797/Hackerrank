@@ -18,10 +18,18 @@
 
 
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-N = int(raw_input())
-results = {}
-for i in range(N):
-    a = raw_input().split(' ')
-    results[a[0]] = [float(x) for x in a[1:]]
-student = raw_input()
-print "%.2f" %(sum(results[student])/len(results[student]))
+if __name__ == '__main__':
+    n = int(input())
+    avgmarks = {}
+    student_marks = {}
+    for _ in range(n):
+        line = input().split()
+        name, score= line[0], line[1:]
+        scores = list(map(float, score))
+        avg_marks = sum(scores)/len(scores)
+        avgmarks[name] = avg_marks
+        student_marks[name] = scores
+    query_name = input()
+    for k,v in avgmarks.items():
+        if k==query_name:
+            print("{0:.2f}".format(v))
